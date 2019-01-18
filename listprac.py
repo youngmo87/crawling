@@ -50,7 +50,7 @@ for i in list_dict:
     i = Diff_sum()
     i.testing()
     Result[i.name] = sum(i.list_result)
-    minResult = sorted(Result, reverse=True)
+    minResult = sorted(Result.items(), key=lambda x : x[1])
     
 print(Result)
-print(minResult[0])
+print(minResult[0][0])
