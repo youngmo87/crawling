@@ -58,11 +58,9 @@ v_leastlike = dicbylike[0][1]['likecnt']
 with codecs.open('./data/output.csv', 'w', 'euc-kr') as ff:
     writer = csv.writer(ff, delimiter=',', quotechar='"')
     writer.writerow(['순위', '노래제목', '가수', '좋아요1', '좋아요2'])  
-
-    
     likecntsum = 0
     likecntsum2 = 0
-    
+
     for cell in dicbyrank:
         s = cell[1]
         print(type(s))
