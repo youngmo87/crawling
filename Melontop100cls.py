@@ -120,7 +120,7 @@ class Melon:
         save(self.sql_truncate_sr, self.sql_insert_sr, self.Song_table)
         print("SongRank테이블 저장완료!!")
 
-class Albuminfo():
+class Albuminfo(Melon):
     sql_truncate = "delete from Albumn"
     sql_insert = "insert into Albumn(albumno, albumtitle, albumtype, likecnt, producer, issuer, issue_Date, total_p_num, genre, avg_score) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     
@@ -190,7 +190,7 @@ class Albuminfo():
             str(self.album_info_dic[i]['발매일']), str(self.album_info_dic[i]['사람수']), self.album_info_dic[i]['장르'], str(self.album_info_dic[i]['평점'])])   
         save(self.sql_truncate, self.sql_insert, self.album_lst)
 
-class Artistsinfo():    
+class Artistsinfo(Melon):    
     sql_truncate = "delete from Artists_info"
     sql_insert = "insert into Artists_info(songid, artists_id, artists_index) values(%s,%s,%s)"
 
